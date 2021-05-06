@@ -17,13 +17,13 @@ public class FirstClass {
                 case 1:
                     System.out.print("Enter number: ");
                     int num = in.nextInt();
-                    exercise1(num);
+                    moreThanSeven(num);
                     break;
                 case 2:
 
                     System.out.print("Enter name: ");
                     String name = in.nextLine();
-                    String result = exercise2(name);
+                    String result = nameHelloyer(name);
                     System.out.println(result);
                     break;
                 case 3:
@@ -32,35 +32,34 @@ public class FirstClass {
                     int[] myArray = new int[length];
                     System.out.println("Your Array : ");
                     for (int i = 0; i < myArray.length; i++) {
-                        myArray[i] = ((int) (Math.random() * 31));
-                        System.out.println(myArray[i]);
+                        System.out.print("[" + i +"]: ");
+                        myArray[i] = in.nextInt();
                     }
-                    exercise3(myArray);
+                    multipleOfThree(myArray);
                     break;
             }
             System.out.println("Для продолжения работы введите \"Y\" (для окончания работы просто нажмите \"Enter\" ");
         }
     }
 
-    public static void exercise1(int num) {
+    public static void moreThanSeven(int num) {
         if (num > 7) {
             System.out.println("Привет");
         }
     }
 
-    public static String exercise2(String name) {
-        String result = "";
+    public static String nameHelloyer(String name) {
         if (name.equals("Вячеслав")) {
             return  "Привет, "+ name;
              }
         return "Нету такого имени";
     }
 
-    public static void exercise3(int[] myArray) {
+    public static void multipleOfThree(int[] myArray) {
         System.out.println("Елементы кратные трём: ");
         for (int i = 0; i < myArray.length; i++) {
             if (myArray[i] % 3 == 0 && myArray[i] != 0) {
-                System.out.println(myArray[i] + "  индекс:" + "[" + i + "]");
+                System.out.println(myArray[i] + "  индекс:[" + i + "]");
             }
 
 
