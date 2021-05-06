@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class FirstClass {
-    public static Scanner in = new Scanner(System.in);
+    private static final Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
         System.out.println("Для начала работы введите \"Y\" ");
@@ -11,9 +11,9 @@ public class FirstClass {
             System.out.println("2.Составить алгоритм: если введенное имя совпадает с Вячеслав, то вывести “Привет, Вячеслав”, если нет, то вывести \"Нет такого имени\"");
             System.out.println("3.Составить алгоритм: на входе есть числовой массив, необходимо вывести элементы массива кратные 3");
             System.out.print("Choose exercise: ");
-            int v = in.nextInt();
+            int variant = in.nextInt();
             in.nextLine();
-            switch (v) {
+            switch (variant) {
                 case 1:
                     System.out.print("Enter number: ");
                     int num = in.nextInt();
@@ -23,8 +23,7 @@ public class FirstClass {
 
                     System.out.print("Enter name: ");
                     String name = in.nextLine();
-                    String result = nameHelloyer(name);
-                    System.out.println(result);
+                    System.out.println(nameHelloyer(name));
                     break;
                 case 3:
                     System.out.print("Enter massive length: ");
@@ -42,23 +41,23 @@ public class FirstClass {
         }
     }
 
-    public static void moreThanSeven(int num) {
+    private static void moreThanSeven(int num) {
         if (num > 7) {
             System.out.println("Привет");
         }
     }
 
-    public static String nameHelloyer(String name) {
+    private static String nameHelloyer(String name) {
         if (name.equals("Вячеслав")) {
             return  "Привет, "+ name;
              }
         return "Нету такого имени";
     }
 
-    public static void multipleOfThree(int[] myArray) {
+    private static void multipleOfThree(int[] myArray) {
         System.out.println("Елементы кратные трём: ");
         for (int i = 0; i < myArray.length; i++) {
-            if (myArray[i] % 3 == 0 && myArray[i] != 0) {
+            if ( myArray[i] != 0 && myArray[i] % 3 == 0) {
                 System.out.println(myArray[i] + "  индекс:[" + i + "]");
             }
 
